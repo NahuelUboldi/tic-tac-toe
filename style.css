@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  padding: 0px;
+  margin: 0px;
+  color: #545454;
+
+  background: linear-gradient(rgba(72, 209, 227, 1), rgba(69, 143, 178, 1));
+  width: 100%;
+  min-height: 100vh;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  justify-content: center;
+  align-items: center;
+}
+.game-container {
+  height: auto;
+  width: auto;
+  background-color: white;
+  margin: 50px;
+  padding: 50px;
+  border-radius: 2rem;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.1)
+  );
+  backdrop-filter: blur(2rem);
+}
+.title {
+  text-align: center;
+  font-size: 4rem;
+}
+.title span {
+  color: #e1e2e1;
+}
+.status-action {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+  font-size: 25px;
+}
+.reset {
+  cursor: pointer;
+}
+.reset:hover {
+  color: #f2ebd3;
+}
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 15px;
+  margin-top: 50px;
+}
+.game-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 200px;
+
+  cursor: pointer;
+  background: linear-gradient(
+    to right bottom,
+    rgba(72, 209, 227, 0.4),
+    rgba(69, 143, 178, 0.4)
+  );
+  box-shadow: inset 8px 8px 5px rgba(69, 143, 178, 0.4);
+  border-radius: 2rem;
+}
+.x,
+.o {
+  cursor: default;
+}
+.x::before {
+  content: '🞬';
+  font-size: 110px;
+}
+.o::before {
+  content: '⚫';
+  font-size: 120px;
+  color: #f2ebd3;
+}
+.won {
+  text-shadow: 4px 4px 25px greenyellow;
+}
+.volver {
+  text-decoration: none;
+  background-color: white;
+  color: #545454;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 10px 30px;
+  border-radius: 2rem;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.1)
+  );
+  backdrop-filter: blur(2rem);
+  transition: linear all 0.5s;
+}
+.volver:hover {
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.5)
+  );
+  transition: linear all 0.5s;
+}
+
+@media only screen and (max-width: 1024px) {
+  .game-grid {
+    margin-top: 25px;
+    grid-gap: 10px;
+  }
+  .game-cell {
+    height: 150px;
+    width: 150px;
+  }
+  .x::before {
+    font-size: 80px;
+  }
+  .o::before {
+    font-size: 90px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .container {
+    margin: 25px;
+    padding: 25px;
+  }
+  .game-cell {
+    height: 100px;
+    width: 100px;
+  }
+  .x::before {
+    font-size: 70px;
+  }
+  .o::before {
+    font-size: 80px;
+  }
+}
